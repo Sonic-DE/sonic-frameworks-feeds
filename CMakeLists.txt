@@ -1,13 +1,11 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.30)
 
-set(KF_VERSION "6.30.0") # handled by release scripts
+set(KF_VERSION "6.31.0") # handled by release scripts
 set(KF_DEP_VERSION "6.30.0") # handled by release scripts
 
 project(Syndication VERSION ${KF_VERSION})
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-set(REQUIRED_QT_VERSION 6.9.0)
+set(REQUIRED_QT_VERSION 6.10.0)
 
 # ECM setup
 find_package(ECM ${KF_DEP_VERSION} CONFIG REQUIRED)
@@ -25,6 +23,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMGenerateQDoc)
 include(ECMDeprecationSettings)
+include(ECMInstalledLibraryCheck)
 
 set(syndication_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/syndication_version.h")
 ecm_setup_version(PROJECT VARIABLE_PREFIX SYNDICATION
